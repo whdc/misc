@@ -3,25 +3,12 @@ Crawling a Smithsonian book
 
 This document describes how to download the individual pages of a Smithsonian online book and assemble them into a PDF.
 
-Before beginning, pull up a terminal and make sure you are running `bash`.  If in doubt, run
+Before beginning: 
 
-```
-echo $SHELL
-```
-
-and if you not see
-
-```
-/bin/bash
-```
-
-then run:
-
-```
-bash
-```
-
-Also make sure you have Python, `wget`, ImageMagick (`convert`), and `pdftk`.  Also you need the XML file with links to the images to be downloaded.  In this case it's `viewer_Harrington_mf2_r2.xml`.
+* Pull up a terminal.  
+* Make sure you are running `bash`.  If in doubt, run `echo $SHELL` and if you not see `/bin/bash` then run `bash`.
+* Make sure you have Python, `wget`, ImageMagick (`convert`), and `pdftk`.  
+* Get the XML file with links to the images to be downloaded.  In this case it's `viewer_Harrington_mf2_r2.xml`.
 
 First, extract the links using a Python script.  Put the following in a file called `extract.py`.
 
