@@ -1,7 +1,7 @@
 Crawling a Smithsonian document
 -------------------------------
 
-This document describes how to assemble a PDF for a Smithsonian online book.
+This document describes how to download the individual pages of a Smithsonian online book and assemble them into a PDF.
 
 Before beginning, make sure you have Python (either 2 or 3), `wget`, ImageMagick (`convert`), and PDFtk (`pdftk`).  Also you need the XML file with links to the images to be downloaded.  In this case it's `viewer_Harrington_mf2_r2.xml`.
 
