@@ -32,7 +32,7 @@ Run it:
 python3 extract.py
 ```
 
-This creates a file called `images.txt` containing just the URLs of the images to be downloaded.  Now create a directory for the downloaded images:
+This creates a file called `images.txt` containing just the filenames of the images to be downloaded.  Now create a directory for the downloaded images:
 
 ```
 mkdir image
