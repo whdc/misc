@@ -10,7 +10,7 @@ First, extract the links using a Python script.  Put the following in a file cal
 ```python
 import re
 
-xml = open('viewer_Harrington_mf2_r2.xml').read().strip()
+xml = open('viewer_Harrington_mf2_r2.xml').read()
 fo = open('images.txt', 'w')
 
 link_pat = re.compile(r'<NAME>http://ids.si.edu/ids/deliveryService\?id=(.+?)</NAME>')
@@ -40,7 +40,7 @@ Extract the images using a `bash` script.  Put the following in a file called `g
 
 while read i
 do
-  wget -O - http://ids.si.edu/ids/deliveryService?id=$i > image/$i
+  wget -O image/$i http://ids.si.edu/ids/deliveryService?id=$i
   sleep 10
 done < images.txt
 ```
