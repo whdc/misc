@@ -18,7 +18,7 @@ xmlstarlet sel -T -t -m '//NAME' -v 'text()' -n viewer_Harrington_mf2_r2.xml > i
 Extract the images:
 
 ```bash
-(mkdir -p image; cd image; while read i ; do wget -O ${i#*=} $i ; sleep 10 ; done) < images.txt
+mkdir -p image; while read i ; do wget -O image/${i#*=} $i ; sleep 10 ; done < images.txt
 ```
 
 Convert the images to individual PDFs:
