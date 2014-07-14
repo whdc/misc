@@ -7,7 +7,7 @@ Before beginning, make sure you have Python (either 2 or 3), `wget`, ImageMagick
 
 First, extract the links using a Python script.  Put the following in a file called `extract.py`.
 
-```
+```python
 import re
 
 xml = open('viewer_Harrington_mf2_r2.xml').read().strip()
@@ -35,7 +35,7 @@ mkdir image
 
 Extract the images using a `bash` script.  Put the following in a file called `get-images.sh`.
 
-```
+```bash
 #!/bin/bash
 
 while read i
