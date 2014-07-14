@@ -1,9 +1,27 @@
-Crawling a Smithsonian document
--------------------------------
+Crawling a Smithsonian book
+---------------------------
 
 This document describes how to download the individual pages of a Smithsonian online book and assemble them into a PDF.
 
-Before beginning, make sure you have Python (either 2 or 3), `wget`, ImageMagick (`convert`), and PDFtk (`pdftk`).  Also you need the XML file with links to the images to be downloaded.  In this case it's `viewer_Harrington_mf2_r2.xml`.
+Before beginning, pull up a terminal and make sure you are running `bash`.  If in doubt, run
+
+```
+echo $SHELL
+```
+
+and if you not see
+
+```
+/bin/bash
+```
+
+then run:
+
+```
+bash
+```
+
+Also make sure you have Python, `wget`, ImageMagick (`convert`), and `pdftk`.  Also you need the XML file with links to the images to be downloaded.  In this case it's `viewer_Harrington_mf2_r2.xml`.
 
 First, extract the links using a Python script.  Put the following in a file called `extract.py`.
 
@@ -57,10 +75,10 @@ This can take hours.  It pauses for 10 seconds between downloading each file, to
 mkdir q25
 ```
 
-Inspect the contents of the `image` directory to obtain the range (2 to 751 in this case) and the form of the filenames.  Then run the following from the command line:
+Then run the following from the command line:
 
-```
-for i in $(seq -f "%04g" 2 751) ; do convert image/NMNH-Harrington_mf2_r2_$i -quality 25 q25/$i.pdf ; done
+```bash
+for i in image/* ; do convert $i -quality 25 q25/$(basename $i).pdf ; done
 ```
 
 Finally, stitch together the individual PDFs:
